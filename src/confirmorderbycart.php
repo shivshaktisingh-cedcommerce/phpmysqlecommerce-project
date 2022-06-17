@@ -47,29 +47,30 @@ if(!isset($_SESSION['userid']))
         $txt.="</tr>";
     }
     $txt.= "</table>";
-    $txt.= "<h3 class='m-5'>TOTAL AMOUNT:  <span class='text-primary'> Rs. $x/</span>";
+    $_SESSION['total_amount']=$x;
     echo $txt;
   }
     ?>
 </div>
 <div class="container mt-5">
- <form class="row g-3" action="ordertable.php">
+ <form class="row g-3" action="ordertable.php" method="POST">
   <div class="col-12">
     <label for="inputAddress" class="form-label">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    <input type="text" class="form-control" name="inputAddress" placeholder="1234 Main St">
   </div>
   
   <div class="col-md-6">
     <label for="inputCity" class="form-label">City</label>
-    <input type="text" class="form-control" id="inputCity">
+    <input type="text" class="form-control" name="inputCity">
   </div>
-  <div class="col-md-4">
-    <label for="inputState" class="form-label">State</label>
-    <input type="text" class="form-control" id="inputState">
+
+  <div class="col-md-2">
+    <label for="inputZip" class="form-label">Pincode</label>
+    <input type="text" class="form-control" name="inputZip">
   </div>
   <div class="col-md-2">
-    <label for="inputZip" class="form-label">Zip</label>
-    <input type="text" class="form-control" id="inputZip">
+    <label for="inputZip" class="form-label">Total Amount:</label>
+    <input type="text" class="form-control text-primary" name="totalAmount"  value="Rs. <?php $x ?>" disabled>
   </div>
   <div class="col-12">
     <div class="form-check">

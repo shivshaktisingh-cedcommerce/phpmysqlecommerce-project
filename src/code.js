@@ -1,7 +1,10 @@
 
 $(document).ready(function(){
-    // aja();
+
+ 
+   
     $("#id").on("click","#purchase",function(){
+      
         var pid = $(this).attr("id_dedo");
         var proname = $(this).attr("name");
         var prosp = $(this).attr("prosp");
@@ -16,8 +19,8 @@ $(document).ready(function(){
                 prolp:prolp
             },
             success:function(data){
+               
                 $("#quant").text(data);
-                // alert(data);
                
             }
         });
@@ -120,6 +123,23 @@ $('#productafterdeletion').on('click','#deleterow',function(){
 
     })
 });
+
+function Delete(deleteproductid,table){
+ 
+    $.ajax({
+        url:"adminpanel.php",
+        method:"POST",
+        data:{
+             deleteproductid:deleteproductid,
+             table:table,
+        },
+        success:function(data){
+        
+     }
+ 
+     })
+
+}
     
  
 

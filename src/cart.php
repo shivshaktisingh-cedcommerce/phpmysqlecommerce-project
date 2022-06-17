@@ -48,11 +48,11 @@ error_reporting(0);
     }
     $txt.= "</table>";
     $txt.= "<h3 class='m-5'>TOTAL AMOUNT:  <span class='text-primary'> Rs. $x/</span>";
-    $txt.= '<a href="confirmorder.php" class="btn btn-sm btn-outline-secondary mx-5 mt-5" id="purchase"> Place Your Order</a>';
+    $txt.= '<a href="confirmorderbycart.php" class="btn btn-sm btn-outline-secondary mx-5 mt-5" id="purchase"> Place Your Order</a>';
     echo $txt;
    }
    else{
-       echo "<h3 class='text-primary m-5'>Please Add few items in your bag</h3> ";
+       echo "<a href='index.php'> '<h3 class='text-primary m-5'>Please Add few items in your bag</h3> </a>";
    }
     ?>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

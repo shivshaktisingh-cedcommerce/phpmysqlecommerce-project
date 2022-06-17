@@ -6,15 +6,15 @@
   }
   
   .typing-demo {
-    margin-left:-50px;
+    margin-left:-20px;
     width: 28ch;
     animation: typing 2s steps(22), blink .5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
     font-family: monospace;
-    font-size: 2em;
-    color:powderblue;
+    font-size: 1.5em;
+    color:chocolate;
   }
   
   @keyframes typing {
@@ -25,7 +25,7 @@
       
   @keyframes blink {
     50% {
-      border-color: yellow;
+      border-color: white;
     }
   }
   .bd-placeholder-img {
@@ -62,3 +62,8 @@
     text-decoration: none;
     color: inherit;
 }
+@media (min-width: 1025px) {
+  .h-custom {
+  height: 100vh !important;
+  }
+  }

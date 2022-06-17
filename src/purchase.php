@@ -1,18 +1,19 @@
 <?php
  session_start();
- //session_destroy();
+ 
 include "connection.php";
 if (!isset($_SESSION['product_in_cart'])) {
   $_SESSION['product_in_cart'] = array();
 }
 
-// session_destroy();
+
+
 if(isset($_POST['proname'])){
 
     $product=$_POST['proname'];
     $productprice=$_POST['prosp'];
     $product_id=$_POST['pid'];
-
+    $cart_id_user=$_SESSION['userid'];
     $s=1;
     $t=1;
     foreach($_SESSION['product_in_cart'] as $key => $val){   
@@ -23,9 +24,9 @@ if(isset($_POST['proname'])){
           }
     }
     if($t==1){
-        $item=array('product_id'=>$product_id ,'product_name'=>$product,'product_price'=>$productprice,"product_quantity"=>1);
+        $item=array('cart_id_user'=>$cart_id_user,'product_id'=>$product_id ,'product_name'=>$product,'product_price'=>$productprice,"product_quantity"=>1);
         array_push($_SESSION['product_in_cart'],$item);
-        echo "1";
+       
      } 
 
        echo count($_SESSION['product_in_cart']);

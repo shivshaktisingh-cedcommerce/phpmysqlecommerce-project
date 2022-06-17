@@ -20,7 +20,7 @@ error_reporting(0);?>
 <body>
 <?php include "header.php" ?>
 <?php if(!isset($_SESSION['userid'])){
-  echo "<h2 style='color:red'>".$_SESSION['msg']."</h2>";
+  echo "<h2 class='mt-5 mx-5' style='color:red'>".$_SESSION['msg']."</h2>";
 }
 ?>
     <div class="container p-5">

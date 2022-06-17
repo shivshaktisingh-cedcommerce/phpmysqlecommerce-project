@@ -1,4 +1,5 @@
 <?php 
+
   //include "connection.php";
  $query = "SELECT * FROM Products ORDER BY product_id";
       $output ="";
@@ -15,8 +16,7 @@
                                   <div class="btn-group">
                                      
                                      <a class="btn btn-sm btn-outline-secondary" id="purchase" id_dedo="'.$row["product_id"].'" name='.$row["product_name"].' prolp='.$row["product_list_price"].' prosp='.$row["product_sale_price"].'>Add to cart</a>
-                                     <a href="productpage.php?id='.$row["product_id"].'" class="btn btn-sm btn-outline-secondary" id="purchase" name='.$row["product_name"].' prolp='.$row["product_list_price"].' prosp='.$row["product_sale_price"].'>Buy Now</a>
-
+                                   
                                   </div></a>
                                   <small class="text-muted">
                                     <span class="fa fa-star checked"></span>
