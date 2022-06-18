@@ -1,8 +1,8 @@
 
 <?php
  include "connection.php";
- $sql = "SELECT * FROM `Products`";
- $result = mysqli_query($conn,$sql);
+ $sql5 = "SELECT * FROM `Products`";
+ $result = mysqli_query($conn,$sql5);
  $txt="<h3 class='mx-5 mt-5'>Products</h3>";
  $txt.="<table class='table table-success table-striped mt-5 mx-2'><tr><td>Product Id</td><td>Product Name</td><td>Product image</td><td>Product sale Price</td><td>Product list price </td><td>Product category</td><td>Action</td></tr>";
  foreach($result as $row){

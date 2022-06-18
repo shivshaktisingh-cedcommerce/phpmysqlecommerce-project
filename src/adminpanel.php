@@ -1,5 +1,6 @@
 <?php 
 session_start();
+error_reporting(0);
 if($_SESSION['name']!="shiv"){
     header("Location:index.php");
 }
@@ -67,7 +68,13 @@ if($_SESSION['name']!="shiv"){
                 <li><input type="submit" class="btn" name="EditOrder" value="Edit Order"></li>
                 
             </ul>
-            </div>            </div>
+            </div>           
+         </div>
+         <div class="col">
+           
+            <input type="submit" class="btn btn-danger btn-lg p-1" value="click twice to LogOut" name="logoutadmin"></button>
+           
+        </div>
         </div>
         </form>
     </div>
@@ -76,37 +83,68 @@ if($_SESSION['name']!="shiv"){
         include "homeadmin.php";
     
     }
-    if(isset($_POST['EditProduct'])){ 
-       include "editproductadmin.php";
-    }
+     
+   if(isset($_POST['logoutadmin'])){
+    session_start();     
+    session_destroy(); 
+    header("Location:index.php"); 
+ }
+
+  
+    
+   
     if(isset($_POST['deleteproductid'])){
         include "connection.php";
         $id=$_POST['deleteproductid'];
         $check=$_POST['table'];
         if($check==0){
+           
             $sql = "DELETE FROM `Products` where product_id='$id'";
             $result=mysqli_query($conn,$sql); 
-            echo 0;
+           
         }
         if($check==1){
+            $query1="SELECT `order_id` FROM Orders WHERE user_id = '$id'";
+            $result=mysqli_query($conn,$query1);
+            $row = mysqli_fetch_all($result);
+            for($i=0;$i<count($row);$i++){
+                $id=$row[$i];
+                $query="DELETE FROM `order_items` WHERE order_id='$id'";
+                $result=mysqli_query($conn,$query);
+                //print_r($row[$i]);
+                //print_r($result);
+                
+            }
+            $query="DELETE FROM `Orders` WHERE order_id='".$row[$i]."'";
+            $result=mysqli_query($conn,$query);
+           // print_r($result);
+            
             $sql = "DELETE FROM `Users` where user_id='$id'";
             $result=mysqli_query($conn,$sql); 
-            echo 1;
+            //print_r($result);
+           
+           
         }
         if($check==2){
             $sql = "DELETE FROM `Orders` where order_id='$id'";
             $result=mysqli_query($conn,$sql); 
-            echo 2;
+            
         }
           
     }
+    if(isset($_POST['EditProduct'])){ 
+        include "editdeleteproductadmin.php";
+     }
     if(isset($_POST['EditUser'])){ 
-        include "edituseradmin.php";
+        include "editdeleteuseradmin.php";
      }
      if(isset($_POST['EditOrder'])){ 
-        include "editorder.php";
+        include "editdeleteorderadmin.php";
+        
      }
     ?>
+    
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src ="code.js"></script>

@@ -125,7 +125,8 @@ $('#productafterdeletion').on('click','#deleterow',function(){
 });
 
 function Delete(deleteproductid,table){
- 
+    alert(deleteproductid);
+    // console.log(deleteproductid);
     $.ajax({
         url:"adminpanel.php",
         method:"POST",
@@ -134,11 +135,31 @@ function Delete(deleteproductid,table){
              table:table,
         },
         success:function(data){
-        
+        console.log(data);
      }
  
      })
 
+};
+
+function EditAdmin(editorderid){
+    console.log(editproductid);
+    alert("shiv");
+    $.ajax({
+        url:"editorderdetailsql.php",
+        method:"POST",
+        data:{
+             editorderid:editorderid,
+        },
+        success:function(data){
+            alert(data[0]);
+            alert(data[1]);
+            alert(data[2]);
+            alert(data[3]);
+        
+     }
+ 
+     })
 }
     
  

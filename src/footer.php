@@ -12,19 +12,19 @@
     <!-- Right -->
     <div>
       <a href="" class="me-4 text-reset">
-        <i class="fa fa-facebook-f"></i>
+        <i class="bi bi-facebook"></i>
       </a>
       <a href="" class="me-4 text-reset">
-        <i class="fa fa-twitter"></i>
+        <i class="bi bi-twitter"></i>
       </a>
       <a href="" class="me-4 text-reset">
-        <i class="fa fa-google"></i>
+        <i class="bi bi-google"></i>
       </a>
       <a href="" class="me-4 text-reset">
-        <i class="fa fa-instagram"></i>
+        <i class="bi bi-instagram"></i>
       </a>
       <a href="" class="me-4 text-reset">
-        <i class="fa fa-linkedin"></i>
+        <i class="bi bi-linkedin"></i>
       </a>
       
     </div>
@@ -44,9 +44,9 @@
             <i class="fas fa-gem me-3"></i>Company name
           </h6>
           <p>
-            Shopping Hub is the fastest growing e-commerce worldwide , established in 2022. We believe in selling quality products and customer satisfaction.  
+            Aroma Hub is the fastest growing e-commerce worldwide , established in 2022. We believe in selling quality products and customer satisfaction.  
           </p>
-          <p class="mb-0">New to Shopping Hub? <a href="/">Click here to see latest product</a> .</p>
+          <p class="mb-0">New to Aroma Hub? <a href="/">Click here to see latest product</a> .</p>
         </div>
         <!-- Grid column -->
 
@@ -57,17 +57,12 @@
             Products
           </h6>
           <p>
-            <a href="#!" class="text-reset">Men's wear</a>
+            <a href="men.php" class="text-reset">Men's perfume</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Women's Wear</a>
+            <a href="women.php" class="text-reset">Women's Perfume</a>
           </p>
-          <p>
-            <a href="#!" class="text-reset">Kids</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Groceries</a>
-          </p>
+         
         </div>
         <!-- Grid column -->
 
@@ -75,7 +70,7 @@
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
-            Useful links
+           
           </h6>
           <p>
             <a href="contactus.php" class="text-reset">Contact Us</a>
